@@ -1,0 +1,366 @@
+
+{
+  "entities": {
+    "UserProfile": {
+      "title": "User Profile",
+      "type": "object",
+      "description": "Represents a user's profile information.",
+      "properties": {
+        "firstName": { "type": "string" },
+        "lastName": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "phone": { "type": "string" },
+        "username": { "type": "string" },
+        "referredBy": { "type": "string" },
+        "package": { "type": "string", "enum": ["bronze", "gold", "platinum"] },
+        "country": { "type": "string" },
+        "state": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "referralCode": { "type": "string" },
+        "referralCount": { "type": "number" },
+        "rewardPoints": { "type": "number" },
+        "isAdmin": { "type": "boolean" },
+        "completedCourses": { "type": "array", "items": { "type": "string" } }
+      },
+      "required": ["firstName", "lastName", "email", "username", "package", "country", "state", "createdAt", "referralCode"]
+    },
+    "Lead": {
+        "title": "Lead",
+        "type": "object",
+        "description": "Represents a lead captured from the lander page.",
+        "properties": {
+            "firstName": { "type": "string" },
+            "email": { "type": "string", "format": "email" },
+            "phone": { "type": "string" },
+            "ref": { "type": "string" },
+            "createdAt": { "type": "string", "format": "date-time" }
+        },
+        "required": ["firstName", "email", "createdAt"]
+    },
+    "ReferralCode": {
+        "title": "Referral Code",
+        "type": "object",
+        "description": "Maps a referral code to a user.",
+        "properties": {
+            "uid": { "type": "string" },
+            "createdAt": { "type": "string", "format": "date-time" }
+        },
+        "required": ["uid", "createdAt"]
+    },
+    "Referral": {
+        "title": "Referral",
+        "type": "object",
+        "description": "Represents a successful referral.",
+        "properties": {
+            "referrerUid": { "type": "string" },
+            "refereeUid": { "type": "string" },
+            "createdAt": { "type": "string", "format": "date-time" },
+            "source": { "type": "string", "enum": ["web", "dynamic_link"] }
+        },
+        "required": ["referrerUid", "refereeUid", "createdAt", "source"]
+    },
+    "Course": {
+      "title": "Course",
+      "type": "object",
+      "description": "Represents a single course video/lesson.",
+      "properties": {
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "videoUrl": { "type": "string", "format": "uri" },
+        "module": { "type": "string" },
+        "order": { "type": "number" },
+        "price": { "type": "number", "description": "Price in cents" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["title", "videoUrl", "module", "order", "price", "createdAt"]
+    },
+    "Enrollment": {
+      "title": "Enrollment",
+      "type": "object",
+      "description": "Represents a user's enrollment in a course.",
+      "properties": {
+        "userId": { "type": "string" },
+        "courseId": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "orderId": { "type": "string", "description": "The Stripe session ID for the purchase" }
+      },
+      "required": ["userId", "courseId", "createdAt", "orderId"]
+    },
+    "Payout": {
+      "title": "Payout",
+      "type": "object",
+      "description": "Represents a payout for user rewards.",
+      "properties": {
+        "userId": { "type": "string" },
+        "amount": { "type": "number" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "status": { "type": "string", "enum": ["pending", "completed"] }
+      },
+      "required": ["userId", "amount", "createdAt", "status"]
+    },
+    "LandingPageVisit": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "LandingPageVisit",
+      "type": "object",
+      "description": "Represents a visit to the landing page.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the landing page visit."
+        },
+        "timestamp": {
+          "type": "string",
+          "description": "Timestamp of when the landing page was visited.",
+          "format": "date-time"
+        },
+        "ipAddress": {
+          "type": "string",
+          "description": "IP address of the visitor."
+        },
+        "userAgent": {
+          "type": "string",
+          "description": "User agent string of the visitor's browser."
+        }
+      },
+      "required": [
+        "id",
+        "timestamp"
+      ]
+    },
+    "PricingPageVisit": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "PricingPageVisit",
+      "type": "object",
+      "description": "Represents a visit to the pricing page.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the pricing page visit."
+        },
+        "timestamp": {
+          "type": "string",
+          "description": "Timestamp of when the pricing page was visited.",
+          "format": "date-time"
+        },
+        "ipAddress": {
+          "type": "string",
+          "description": "IP address of the visitor."
+        },
+        "userAgent": {
+          "type": "string",
+          "description": "User agent string of the visitor's browser."
+        },
+        "buyNowClicked": {
+          "type": "boolean",
+          "description": "Indicates whether the 'Buy Now' button was clicked."
+        }
+      },
+      "required": [
+        "id",
+        "timestamp"
+      ]
+    },
+    "DashboardVisit": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "DashboardVisit",
+      "type": "object",
+      "description": "Represents a visit to the dashboard page.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the dashboard visit."
+        },
+        "timestamp": {
+          "type": "string",
+          "description": "Timestamp of when the dashboard was visited.",
+          "format": "date-time"
+        },
+        "ipAddress": {
+          "type": "string",
+          "description": "IP address of the visitor."
+        },
+        "userAgent": {
+          "type": "string",
+          "description": "User agent string of the visitor's browser."
+        },
+        "paidQueryParam": {
+          "type": "boolean",
+          "description": "Indicates whether the 'paid' query parameter was present."
+        }
+      },
+      "required": [
+        "id",
+        "timestamp"
+      ]
+    }
+  },
+  "auth": {
+    "providers": [
+      "password",
+      "anonymous"
+    ]
+  },
+  "firestore": {
+    "structure": [
+      {
+        "path": "/users/{userId}",
+        "definition": {
+          "entityName": "UserProfile",
+          "schema": {
+            "$ref": "#/backend/entities/UserProfile"
+          },
+          "description": "Stores user profile data.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "The unique ID of the user."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/leads/{leadId}",
+        "definition": {
+          "entityName": "Lead",
+          "schema": {
+            "$ref": "#/backend/entities/Lead"
+          },
+          "description": "Stores lead data captured from the lander form.",
+          "params": [
+            {
+              "name": "leadId",
+              "description": "The unique ID for the lead."
+            }
+          ]
+        }
+      },
+       {
+        "path": "/referralCodes/{code}",
+        "definition": {
+          "entityName": "ReferralCode",
+          "schema": {
+            "$ref": "#/backend/entities/ReferralCode"
+          },
+          "description": "Stores referral code data.",
+          "params": [
+            {
+              "name": "code",
+              "description": "The unique referral code."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/referrals/{referralId}",
+        "definition": {
+          "entityName": "Referral",
+          "schema": {
+            "$ref": "#/backend/entities/Referral"
+          },
+          "description": "Stores data for each referral.",
+          "params": [
+            {
+              "name": "referralId",
+              "description": "Unique identifier for the referral."
+            }
+          ]
+        }
+      },
+       {
+        "path": "/courses/{courseId}",
+        "definition": {
+          "entityName": "Course",
+          "schema": {
+            "$ref": "#/backend/entities/Course"
+          },
+          "description": "Stores course data.",
+          "params": [
+            {
+              "name": "courseId",
+              "description": "Unique identifier for the course."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/enrollments/{enrollmentId}",
+        "definition": {
+          "entityName": "Enrollment",
+          "schema": {
+            "$ref": "#/backend/entities/Enrollment"
+          },
+          "description": "Links a user to a course they are enrolled in.",
+          "params": [
+            {
+              "name": "enrollmentId",
+              "description": "Unique identifier for the enrollment record."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/payouts/{payoutId}",
+        "definition": {
+          "entityName": "Payout",
+          "schema": { "$ref": "#/backend/entities/Payout" },
+          "description": "Stores data for each user payout.",
+          "params": [
+            {
+              "name": "payoutId",
+              "description": "Unique identifier for the payout record."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/landing_page_visits/{landingPageVisitId}",
+        "definition": {
+          "entityName": "LandingPageVisit",
+          "schema": {
+            "$ref": "#/backend/entities/LandingPageVisit"
+          },
+          "description": "Stores data for each landing page visit.  No authorization dependencies as the data is append-only.",
+          "params": [
+            {
+              "name": "landingPageVisitId",
+              "description": "Unique identifier for the landing page visit."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/pricing_page_visits/{pricingPageVisitId}",
+        "definition": {
+          "entityName": "PricingPageVisit",
+          "schema": {
+            "$ref": "#/backend/entities/PricingPageVisit"
+          },
+          "description": "Stores data for each pricing page visit. No authorization dependencies as the data is append-only.",
+          "params": [
+            {
+              "name": "pricingPageVisitId",
+              "description": "Unique identifier for the pricing page visit."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/dashboard_visits/{dashboardVisitId}",
+        "definition": {
+          "entityName": "DashboardVisit",
+          "schema": {
+            "$ref": "#/backend/entities/DashboardVisit"
+          },
+          "description": "Stores data for each dashboard visit.  No authorization dependencies as the data is append-only.",
+          "params": [
+            {
+              "name": "dashboardVisitId",
+              "description": "Unique identifier for the dashboard visit."
+            }
+          ]
+        }
+      }
+    ],
+    "reasoning": "Given the static nature of the 'Write & Paid Funnel' application, which primarily focuses on UI and frontend interactions, and the absence of a real backend with user authentication and data persistence, storing data in Firestore might be unnecessary. However, to accommodate the collection of landing page, pricing page, and dashboard visit data, the following Firestore structure is designed for simplicity and potential future expansion.\n\nThe structure prioritizes flat collections for each type of visit data. Since the application is designed to be static and without user-specific content, authorization independence is less critical. All data is treated as public and append-only, suitable for analytics purposes. The design avoids complex authorization rules and nested data structures to simplify security configurations. Each collection is designed to store data about different page visits, allowing for easy querying and analysis.\n\nThis structure supports Quality of Service (QoS) by enabling efficient `list` operations on each collection, as required by the QAPs. Since there are no specific access controls, the design doesn't use a membership model and relies on the principle that rules are not filters. Data clarity and predictability are maintained through explicit state modeling and semantic naming conventions.\n\nSince this is a static funnel with no user accounts or authentication, security is not enforced on read operations. Writes are allowed without authentication, under the assumption that data integrity will be handled at the application level or through other backend mechanisms if the funnel were to be enhanced with user accounts and user generated content."
+  }
+}

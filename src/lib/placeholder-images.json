@@ -1,0 +1,82 @@
+{
+  "placeholderImages": [
+    {
+      "id": "what-you-get",
+      "description": "A person writing a letter at a stylish desk.",
+      "imageUrl": "https://images.unsplash.com/photo-1500989145603-8e7ef71d639e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHx3cml0aW5nJTIwZGVza3xlbnwwfHx8fDE3NjE2NjM3Njd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "writing desk"
+    },
+    {
+      "id": "avatar-1",
+      "description": "Portrait of Jessica M.",
+      "imageUrl": "https://images.unsplash.com/photo-1580489944761-15a19d654956?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx3b21hbiUyMHBvcnRyYWl0fGVufDB8fHx8MTc2MTY5NjE0NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "woman portrait"
+    },
+    {
+      "id": "avatar-2",
+      "description": "Portrait of David R.",
+      "imageUrl": "https://images.unsplash.com/photo-1636377985931-898218afd306?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxtYW4lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NjE2NjYwODB8MA&ixlibrb-4.1.0&q=80&w=1080",
+      "imageHint": "man portrait"
+    },
+    {
+      "id": "avatar-3",
+      "description": "Portrait of Sarah K.",
+      "imageUrl": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx3b21hbiUyMHBvcnRyYWl0fGVufDB8fHx8MTc2MTY5NjE0NHww&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageHint": "woman portrait"
+    },
+    {
+      "id": "video-thumbnail",
+      "description": "Thumbnail image for the hero section video.",
+      "imageUrl": "https://images.unsplash.com/photo-1519638831568-d9897f54ed69?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx3cml0aW5nJTIwbGV0dGVyfGVufDB8fHx8MTc2MjAwNTY3OXww&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageHint": "writing letter"
+    },
+    {
+      "id": "video-thumbnail-writepaid",
+      "description": "A man presenting in front of a camera for Write & Paid.",
+      "imageUrl": "https://images.unsplash.com/photo-1739298061666-f9fc0a125d60?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxtYW4lMjBwcmVzZW50aW5nfGVufDB8fHx8MTc2MjAwMzExMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "man presenting"
+    },
+    {
+      "id": "paid-per-letter",
+      "description": "A person writing a letter.",
+      "imageUrl": "https://images.unsplash.com/photo-1642543492530-872bdd96321e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHx3cml0aW5nJTIwbGV0dGVyfGVufDB8fHx8MTc2MjAwMTk4OXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "writing letter"
+    },
+    {
+      "id": "send-it-cashback",
+      "description": "A phone showing a cashback app with money.",
+      "imageUrl": "https://images.unsplash.com/photo-1605600659802-1353d7fd3732?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjYXNoYmFjayUyMGFwcHxlbnwwfHx8fDE3NjIwMDMxMTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "cashback app"
+    },
+    {
+      "id": "send-it-a2z",
+      "description": "A laptop showing an e-commerce backend.",
+      "imageUrl": "https://picsum.photos/seed/a2zcourse/600/400",
+      "imageHint": "ecommerce backend"
+    },
+    {
+      "id": "send-it-writing-gigs",
+      "description": "A person writing in a notebook.",
+      "imageUrl": "https://images.unsplash.com/photo-1555431473-c1e56b1febbd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHx3cml0aW5nJTIwbm90ZWJvb2t8ZW58MHx8fHwxNzYxODk1ODE3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "writing notebook"
+    },
+    {
+      "id": "tiktok-mastery",
+      "description": "People collaborating on a TikTok strategy.",
+      "imageUrl": "https://images.unsplash.com/photo-1529119368496-2dfda6ec2804?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxidXNpbmVzcyUyMHN0cmF0ZWd5fGVufDB8fHx8MTc2MTkzODYwOXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "business strategy"
+    },
+    {
+      "id": "credit-repair",
+      "description": "A person reviewing their credit report.",
+      "imageUrl": "https://images.unsplash.com/photo-1705313382153-ed294af4b0a7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxjcmVkaXQlMjByZXBvcnR8ZW58MHx8fHwxNzYyMDAzMTEyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "credit report"
+    },
+    {
+      "id": "library-books",
+      "description": "A stack of books in a library.",
+      "imageUrl": "https://images.unsplash.com/photo-1683178861337-ca70ef8c0db3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxsaWJyYXJ5JTIwYm9va3N8ZW58MHx8fHwxNzYxOTY1OTg2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "library books"
+    }
+  ]
+}
